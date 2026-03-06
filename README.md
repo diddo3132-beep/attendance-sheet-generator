@@ -57,6 +57,12 @@ attendance_tool/
 2. 双击 `build.bat`
 3. 在 `dist/` 中获取 `考勤表助手.exe`
 
+## 测试 / Tests
+
+```bash
+python -m unittest discover -s tests -v
+```
+
 ## 许可证 / License
 
 [MIT License](LICENSE)
