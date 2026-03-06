@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""从维修工程教学大纲 PDF 中提取课程信息"""
+"""从课程大纲 PDF 中提取课程信息（支持「课程名称」「课程代码」「课时」「教学内容」等标准字段）"""
 import re
 import json
 import os
@@ -17,8 +17,8 @@ def clean_content(text):
     lines = text.split('\n')
     cleaned = []
     skip_patterns = re.compile(
-        r'版本/修订|维修工程教学大纲|CSS-DEP-JXDG|^\d+\s*/\s*\d+$|^\d+$'
-        r'|此页有意留空白|备注|注：|复训|页眉|页码',
+        r'版本/修订|^\d+\s*/\s*\d+$|^\d+$'
+        r'|此页有意留空白|备注|注：|页眉|页码',
         re.IGNORECASE
     )
     for line in lines:

@@ -32,7 +32,7 @@ def main():
         return
 
     if not os.path.exists(COURSES_JSON):
-        print("未找到课程数据库，请先提供维修工程教学大纲 PDF 路径：")
+        print("未找到课程数据库，请先提供课程大纲 PDF 路径：")
         pdf = input("PDF 路径：").strip().strip('"').strip("'")
         if not os.path.exists(pdf):
             print(f"文件不存在：{pdf}")

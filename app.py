@@ -269,7 +269,7 @@ class AttendanceApp:
 
     def _import_pdf(self):
         pdf_path = filedialog.askopenfilename(
-            title="选择维修工程教学大纲 PDF",
+            title="选择课程大纲 PDF",
             filetypes=[("PDF 文件", "*.pdf")]
         )
         if not pdf_path:
