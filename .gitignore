@@ -12,6 +12,7 @@ build/
 output/*.docx
 data/courses.json
 data/config.json
+config/parse_config.json
 
 .DS_Store
 Thumbs.db

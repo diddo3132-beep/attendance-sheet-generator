@@ -4,9 +4,15 @@
 
 A general-purpose tool for generating training attendance sheets. It extracts course data from syllabus PDFs and fills Word templates automatically.
 
+## 适用场景 / Use Cases
+
+- 企业内训、岗位培训的签到表批量制作
+- 讲座、研讨会参会名单登记
+- 有课程大纲 PDF + 固定格式考勤表模板的机构
+
 ## 功能 / Features
 
-- **PDF 大纲解析** — 从课程大纲 PDF 中批量提取课程代码、名称、课时、教学内容（需包含「课程名称」「课程代码」「课时」「教学内容」等字段）
+- **PDF 大纲解析** — 批量提取课程信息，支持通过 `config/parse_config.json` 自定义解析规则以适配不同大纲格式
 - **考勤表自动填充** — 根据选定课程和学员名单，自动填充 Word 模板
 - **图形界面** — 基于 tkinter 的 GUI，支持下拉选课、粘贴学员名单、一键生成
 - **Windows 打包** — 可通过 PyInstaller 打包为单文件 .exe
@@ -33,6 +39,19 @@ pip install python-docx pdfplumber
 
 选择课程、填写日期/教员/地点、粘贴学员名单（每行：工号 Tab 姓名），点击生成。
 
+### 4. 自定义 PDF 解析（可选）
+
+若大纲格式与默认不同，复制 `config/parse_config.example.json` 为 `config/parse_config.json` 并按需修改。详见 `config/README.md`。
+
+### 示例：学员名单格式
+
+```
+1001	张三
+1002	李四
+1003	王五
+```
+（每行：工号 + Tab + 姓名，可从 Excel 复制粘贴）
+
 ## 项目结构 / Project Structure
 
 ```
@@ -46,6 +65,7 @@ attendance_tool/
 ├── course_db.py         # 课程数据库
 ├── inspect_template.py  # 模板结构检查工具
 ├── build.bat            # Windows 打包脚本
+├── config/              # 解析配置（parse_config.json）
 ├── template/            # 模板目录
 ├── data/                # 课程数据
 └── output/              # 生成的考勤表

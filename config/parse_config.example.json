@@ -1,0 +1,21 @@
+{
+  "_comment": "复制为 parse_config.json 并修改以适配你的大纲 PDF 格式",
+  "block_split": "课程名称",
+  "name": {
+    "label": "课程名称",
+    "pattern": "课程名称\\s+([^\\n]+)"
+  },
+  "code": {
+    "label": "课程代码",
+    "pattern": "课程代码\\s+([A-Za-z0-9\\-]+)"
+  },
+  "hours": {
+    "label": "课时",
+    "pattern": "课时\\s+(\\d+)"
+  },
+  "content": {
+    "label": "教学内容",
+    "end_keywords": ["考核方式", "复训间隔", "课程名称"]
+  },
+  "skip_in_content": ["版本/修订", "此页有意留空白", "备注", "注：", "页眉", "页码", "^(\\d+\\s*/\\s*\\d+)$", "^(\\d+)$"]
+}

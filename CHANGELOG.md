@@ -1,5 +1,16 @@
 # 更新日志
 
+## [0.2.0] - 2026-03
+
+### 新增
+
+- PDF 解析配置化：`config/parse_config.json` 支持自定义正则，适配不同大纲格式
+- `config/parse_config.example.json` 与 `config/README.md` 配置说明
+- README 增加适用场景、示例、配置说明
+- GitHub Issue 模板（Bug / 功能建议）、PR 模板
+
+---
+
 ## [0.1.0] - 2026-03
 
 ### 新增
